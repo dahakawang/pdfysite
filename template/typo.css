@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body {
+  font-family:  Avenir, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+}
+
+
+/* 块/段落引用 */
+blockquote {
+  position:relative;
+  color: #999;
+  font-weight:300;
+  font-family:Avenir, 'Helvetica Neue', 'Microsoft Yahei', 'Hiragino Sans GB', 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+  border-left:1px solid #1abc9c;
+  padding-left:1em;
+  margin:1em 3em 1em 2em;
+}
+
+
+/* 让链接在 hover 状态下显示下划线 */
+a{ color:#1abc9c; }
+a:hover{ text-decoration:underline; }
+
+
+
+
+.wrapper{
+  /*margin: 4em 5em;*/
+}
+.title{
+  text-align: center;
+}
+.description {
+  font-size: 80%;
+  font-style: italic;
+}
+.author{
+  color:#888;
+  margin:5em 0 0.5em;
+  padding-bottom:0.1em;
+  border-bottom:3px double #eee;
+}
+img {
+  display: block;
+  margin: 1em 0;
+}
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE ncx PUBLIC "-//NISO//DTD ncx 2005-1//EN"
+ "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta content="urn:uuid:38f42664-3418-46a1-8883-388dfa0d5a46" name="dtb:uid"/>
+    <meta content="1" name="dtb:depth"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>知乎问答集锦<%= id %></text>
+  </docTitle>
+  <navMap>
+    <% for @content in contents %>
+    <navPoint id="<%= get_id @content, contents%>" playOrder="<%= get_order @content, contents %>">
+      <navLabel>
+        <text><%= get_title @content %></text>
+      </navLabel>
+      <content src="<%= @content %>"/>
+    </navPoint>
+    <% end %>
+  </navMap>
+</ncx>

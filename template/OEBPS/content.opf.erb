@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookId" version="2.0">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+    <dc:identifier id="BookId" opf:scheme="UUID">urn:uuid:38f42664-3418-46a1-8883-388dfa0d5a46</dc:identifier>
+    <dc:title>知乎问答集锦<%= id %></dc:title>
+    <dc:creator opf:file-as="王凯强" opf:role="aut">王凯强</dc:creator>
+    <dc:publisher>知乎官网</dc:publisher>
+    <!-- meta name="cover" content="cover-image" /-->
+  </metadata>
+  <manifest>
+    <item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+    <% for @image in images %>
+    <item href="<%= @image %>" id="<%= @image %>" media-type="image/jpeg" />
+    <% end %>
+    <% for @style in styles %>
+    <item href="<%= @style %>" id="<%= @style %>" media-type="text/css" />
+    <% end %>
+    <% for @content in contents %>
+    <item href="<%= @content %>" id="<%= @content %>" media-type="application/xhtml+xml" />
+    <% end %>
+  </manifest>
+  <spine toc="ncx">
+    <% for @content in contents %>
+    <itemref idref="<%= @content %>" />
+    <% end %>
+  </spine>
+</package>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title><%= ERB::Util.h question.title %></title>
+	<link rel="stylesheet" type="text/css" href="typo.css"></link>
+</head>
+<body>
+	<div class="wrapper">
+		<h1 class="title"><%= ERB::Util.h question.title %></h1>
+		<%= question.des.to_xhtml %>
+
+		<div class="anwser-list">
+			<% for @answer in question.answers %>
+		    <div class="anwser">
+		    	<div class="author"><%= ERB::Util.h @answer.author %></div>
+		    </div>
+		    <%= @answer.content.to_xhtml %>
+		  <% end %>
+		</div>
+	</div>
+</body>
+</html>
